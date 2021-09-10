@@ -1,7 +1,7 @@
 # This file is part of account_payment_type module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, ModelSQL, DeactivableMixin, fields
 from trytond.pyson import Eval, If
 from trytond.pool import Pool
 from trytond.transaction import Transaction
@@ -17,13 +17,12 @@ KINDS = [
     ]
 
 
-class PaymentType(ModelSQL, ModelView):
+class PaymentType(DeactivableMixin, ModelSQL, ModelView):
     'Payment Type'
     __name__ = 'account.payment.type'
 
     name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('Code')
-    active = fields.Boolean('Active')
     company = fields.Many2One('company.company', 'Company', required=True,
         select=True, readonly=True, domain=[
             ('id', If(Eval('context', {}).contains('company'), '=', '!='),
@@ -43,10 +42,6 @@ class PaymentType(ModelSQL, ModelView):
                 ('account.move.line', 'payment_type'),
                 ('account.invoice', 'payment_type'),
                 ])
-
-    @staticmethod
-    def default_active():
-        return True
 
     @staticmethod
     def default_company():
