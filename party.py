@@ -3,6 +3,7 @@
 # the full copyright notices and license terms.
 from trytond.model import ModelSQL, fields
 from trytond.pool import PoolMeta, Pool
+from trytond.pyson import Eval
 from trytond.modules.company.model import CompanyValueMixin
 from trytond.transaction import Transaction
 
@@ -23,7 +24,10 @@ class PartyAccountPaymentType(CompanyValueMixin, ModelSQL):
     'Party Account Payment Type'
     __name__ = 'party.account.payment.type'
 
-    party = fields.Many2One('party.party', 'Party', ondelete='CASCADE')
+    party = fields.Many2One('party.party', 'Party', ondelete='CASCADE',
+        context={
+            'company': Eval('company'),
+        }, depends=['company'])
     customer_payment_type = customer_payment_type
     supplier_payment_type = supplier_payment_type
 

@@ -11,12 +11,13 @@ from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 from trytond.tests.test_tryton import doctest_teardown
 from trytond.tests.test_tryton import doctest_checker
 
-from trytond.modules.company.tests import create_company, set_company
+from trytond.modules.company.tests import (CompanyTestMixin, create_company,
+    set_company)
 from trytond.modules.account.tests import create_chart, get_fiscalyear
 from trytond.modules.account_invoice.tests import set_invoice_sequences
 
 
-class AccountPaymentTypeTestCase(ModuleTestCase):
+class AccountPaymentTypeTestCase(CompanyTestMixin, ModuleTestCase):
     'Test Account Payment Type module'
     module = 'account_payment_type'
 
