@@ -1,15 +1,11 @@
-# This file is part of the account_payment_type module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains the full
-# copyright notices and license terms.
-from decimal import Decimal
-import doctest
-import unittest
 
-import trytond.tests.test_tryton
+# This file is part of Tryton.  The COPYRIGHT file at the top level of
+# this repository contains the full copyright notices and license terms.
+
+from decimal import Decimal
+
 from trytond.pool import Pool
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
-from trytond.tests.test_tryton import doctest_teardown
-from trytond.tests.test_tryton import doctest_checker
 
 from trytond.modules.company.tests import (CompanyTestMixin, create_company,
     set_company)
@@ -18,7 +14,7 @@ from trytond.modules.account_invoice.tests import set_invoice_sequences
 
 
 class AccountPaymentTypeTestCase(CompanyTestMixin, ModuleTestCase):
-    'Test Account Payment Type module'
+    'Test AccountPaymentType module'
     module = 'account_payment_type'
 
     @with_transaction()
@@ -82,21 +78,4 @@ class AccountPaymentTypeTestCase(CompanyTestMixin, ModuleTestCase):
             # TODO Create move line payment + payment type payable
 
 
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        AccountPaymentTypeTestCase))
-    suite.addTests(doctest.DocFileSuite('scenario_account_payment_type.rst',
-            tearDown=doctest_teardown, encoding='utf-8',
-            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE,
-            checker=doctest_checker))
-    suite.addTests(doctest.DocFileSuite('scenario_commission_payment_type.rst',
-            tearDown=doctest_teardown, encoding='utf-8',
-            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE,
-            checker=doctest_checker))
-    suite.addTests(doctest.DocFileSuite(
-            'scenario_project_invoice_payment_type.rst',
-            tearDown=doctest_teardown, encoding='utf-8',
-            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE,
-            checker=doctest_checker))
-    return suite
+del ModuleTestCase
