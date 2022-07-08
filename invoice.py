@@ -32,6 +32,8 @@ class Invoice(metaclass=PoolMeta):
     @classmethod
     def __setup__(cls):
         super().__setup__()
+        # allow process or paid invoices when is posted
+        cls._check_modify_exclude.add('payment_type')
         cls.payment_direct_debit.states = {
             'invisible': True,
         }
