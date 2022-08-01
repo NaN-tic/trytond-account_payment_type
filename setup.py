@@ -8,7 +8,7 @@ import io
 from configparser import ConfigParser
 
 MODULE = 'account_payment_type'
-PREFIX = 'trytonspain'
+PREFIX = 'nan-tic'
 MODULE2PREFIX = {}
 
 
