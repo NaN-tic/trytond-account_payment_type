@@ -8,6 +8,7 @@ from . import party
 from . import invoice
 from . import commission
 from . import work
+from . import sale
 
 
 def register():
@@ -18,6 +19,7 @@ def register():
         party.PartyAccountPaymentType,
         party.Party,
         invoice.Invoice,
+        sale.Sale,
         module='account_payment_type', type_='model')
     Pool.register(
         commission.Commission,
