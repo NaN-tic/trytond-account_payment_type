@@ -91,6 +91,18 @@ class Invoice(metaclass=PoolMeta):
                 return payment_type.id
         return None
 
+
+    @fields.depends('company', 'type', 'untaxed_amount', 'lines')
+    def on_change_party(self):
+        super().on_change_party()
+        self.payment_type = self.on_change_with_payment_type()
+
+
+    @fields.depends('company', 'type', 'untaxed_amount', 'lines')
+    def on_change_lines(self):
+        super().on_change_lines()
+        self.payment_type = self.on_change_with_payment_type()
+
     def _get_move_line(self, date, amount):
         line = super(Invoice, self)._get_move_line(date, amount)
         if self.payment_type:
