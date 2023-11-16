@@ -26,7 +26,7 @@ class PartyAccountPaymentType(CompanyValueMixin, ModelSQL):
 
     party = fields.Many2One('party.party', 'Party', ondelete='CASCADE',
         context={
-            'company': Eval('company'),
+            'company': Eval('company', -1),
         }, depends=['company'])
     customer_payment_type = customer_payment_type
     supplier_payment_type = supplier_payment_type
