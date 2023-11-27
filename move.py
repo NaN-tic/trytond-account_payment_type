@@ -16,7 +16,7 @@ class Move(metaclass=PoolMeta):
 
     def cancel(self, default=None, reversal=False):
         with Transaction().set_context(cancel_move=True):
-            return super(Move, self).cancel(default=default)
+            return super(Move, self).cancel(default=default, reversal=reversal)
 
 
 class Line(metaclass=PoolMeta):
