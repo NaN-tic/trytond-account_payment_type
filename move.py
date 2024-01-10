@@ -31,7 +31,7 @@ class Line(metaclass=PoolMeta):
     payment_type = fields.Many2One('account.payment.type',
         'Payment Type', domain=[
             ('kind', 'in', ['both', Eval('account_kind')]),
-            ], depends=['account_kind', 'reconciliation'],
+            ],
         states={
                 'readonly': Bool(Eval('reconciliation')),
                 'invisible': ~Eval('account_kind', '').in_(
