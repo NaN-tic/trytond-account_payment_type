@@ -26,8 +26,7 @@ class Invoice(metaclass=PoolMeta):
             ],
         states={
             'readonly': Not(Bool(Eval('state').in_(['draft', 'validated']))),
-            },
-        depends=['payment_type_kind', 'state'])
+            })
 
     @classmethod
     def __setup__(cls):
