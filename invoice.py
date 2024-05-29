@@ -8,7 +8,7 @@ from trytond.pyson import Bool, Eval, Not
 from trytond.modules.account_payment_type.payment_type import KINDS
 
 __all__ = ['Invoice']
-ZERO = Decimal('0.0')
+ZERO = Decimal(0)
 
 
 class Invoice(metaclass=PoolMeta):
