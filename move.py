@@ -81,7 +81,13 @@ class Line(metaclass=PoolMeta):
     @classmethod
     def search_account_kind(cls, name, clause):
         value = clause[2]
-        return [('account.type.%s'%value, *clause[1], True)]
+        if value in ('', None):
+            return [
+                ('account.type.payable', *clause[1], True),
+                ('account.type.receivable', *clause[1], True),
+                ]
+        else:
+            return [('account.type.%s' % value, *clause[1], True)]
 
     @fields.depends('account')
     def on_change_account(self):
