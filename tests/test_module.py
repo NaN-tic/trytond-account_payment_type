@@ -42,13 +42,16 @@ class AccountPaymentTypeTestCase(CompanyTestMixin, ModuleTestCase):
                     ])
             revenue, = Account.search([
                     ('type.revenue', '=', True),
-                    ])
+                    ('closed', '=', False),
+                    ], limit=1)
             receivable, = Account.search([
                     ('type.receivable', '=', True),
-                    ])
+                    ('closed', '=', False),
+                    ], limit=1)
             payable, = Account.search([
                     ('type.payable', '=', True),
-                    ])
+                    ('closed', '=', False),
+                    ], limit=1)
             payment_payable, = PaymentType.create([{
                     'name': 'Payment Payable',
                     'kind': 'payable',
