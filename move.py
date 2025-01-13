@@ -69,7 +69,8 @@ class Line(metaclass=PoolMeta):
 
     @fields.depends('account', 'credit', 'debit')
     def on_change_with_account_kind(self, name=None):
-        if self.account and (self.account.type.payable or
+        if self.account and self.account.type and (
+                self.account.type.payable or
                 self.account.type.receivable):
             if (self.credit or 0) > 0 or (self.debit or 0) < 0:
                 return 'payable'
@@ -91,8 +92,8 @@ class Line(metaclass=PoolMeta):
 
     @fields.depends('account')
     def on_change_account(self):
-        super(Line, self).on_change_account()
-        if self.account and (self.account.type.payable == True
-                or self.account.type.receivable == True):
+        super().on_change_account()
+        if self.account and self.account.type and (self.account.type.payable
+                or self.account.type.receivable):
             self.account_kind = ('payable' if self.account.type.payable
                 else 'receivable')
