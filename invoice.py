@@ -7,7 +7,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval, Not
 from trytond.modules.account_payment_type.payment_type import KINDS
 
-__all__ = ['Invoice']
 ZERO = Decimal(0)
 
 
@@ -33,9 +32,11 @@ class Invoice(metaclass=PoolMeta):
         super().__setup__()
         # allow process or paid invoices when is posted
         cls._check_modify_exclude.add('payment_type')
-        cls.payment_direct_debit.states = {
-            'invisible': True,
-        }
+        # allow install demo module
+        if hasattr(cls, 'payment_direct_debit'):
+            cls.payment_direct_debit.states = {
+                'invisible': True,
+                }
 
     @fields.depends('type', 'untaxed_amount', 'lines')
     def on_change_with_payment_type_kind(self, name=None):
