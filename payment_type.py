@@ -81,7 +81,7 @@ class PaymentType(DeactivableMixin, ModelSQL, ModelView):
                 record, = records
                 model, = IrModel.search([('name', '=', model_name)])
                 field, = Field.search([
-                        ('model.model', '=', cls.__name__),
+                        ('model.name', '=', cls.__name__),
                         ('name', 'in', list(fields)),
                         ], limit=1)
                 # Use payment from record to be coherent in error message
