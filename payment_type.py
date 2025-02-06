@@ -79,7 +79,7 @@ class PaymentType(DeactivableMixin, ModelSQL, ModelView):
             records = Model.search([(field_name, 'in', payment_ids)], limit=1)
             if records:
                 record, = records
-                model, = IrModel.search([('model', '=', model_name)])
+                model, = IrModel.search([('name', '=', model_name)])
                 field, = Field.search([
                         ('model.model', '=', cls.__name__),
                         ('name', 'in', list(fields)),
