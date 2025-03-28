@@ -85,9 +85,10 @@ class Invoice(metaclass=PoolMeta):
                 else:
                     name = 'customer_payment_type'
 
-            payment_type = getattr(party, name)
-            if payment_type:
-                return payment_type.id
+            if name:
+                payment_type = getattr(party, name)
+                if payment_type:
+                    return payment_type.id
         return None
 
 
