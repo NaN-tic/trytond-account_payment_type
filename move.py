@@ -6,7 +6,7 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval, Bool
 from trytond.transaction import Transaction
 from trytond.i18n import gettext
-from trytond.exceptions import UserError
+from trytond.model.exceptions import ValidationError
 
 __all__ = ['Move', 'Line']
 
@@ -63,7 +63,7 @@ class Line(metaclass=PoolMeta):
         if (self.payment_type
                 and self.account.type.payable == False
                 and self.account.type.receivable == False ):
-            raise UserError(gettext(
+            raise ValidationError(gettext(
                 'account_payment_type.invalid_account_payment_type',
                 payment=self.rec_name))
 
