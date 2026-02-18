@@ -59,6 +59,9 @@ class Invoice(metaclass=PoolMeta):
                 and self.payment_type.kind == 'both'):
             return self.payment_type.id
 
+        # reload invoice.untaxed_amount from invoice.lines (line.amount)
+        self._on_change_lines_taxes()
+
         kind = self.on_change_with_payment_type_kind()
         if (hasattr(self, 'payment_type') and self.payment_type
                 and self.payment_type.kind == kind):
