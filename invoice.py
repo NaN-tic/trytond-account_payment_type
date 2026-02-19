@@ -40,14 +40,23 @@ class Invoice(metaclass=PoolMeta):
 
     @fields.depends('type', 'untaxed_amount', 'lines')
     def on_change_with_payment_type_kind(self, name=None):
-        if self.untaxed_amount:
+        # reload untaxed_amount from invoice.lines (line.amount)
+        if self.lines:
+            untaxed_amount = Decimal(0)
+            for line in self.lines:
+                if getattr(line, 'type', '') == 'line':
+                    untaxed_amount += getattr(line, 'amount', 0) or 0
+        else:
+            untaxed_amount = self.untaxed_amount
+
+        if untaxed_amount:
             if self.type == 'out':
-                if self.untaxed_amount >= ZERO:
+                if untaxed_amount >= ZERO:
                     return 'receivable'
                 else:
                     return 'payable'
             elif self.type == 'in':
-                if self.untaxed_amount >= ZERO:
+                if untaxed_amount >= ZERO:
                     return 'payable'
                 else:
                     return 'receivable'
@@ -58,9 +67,6 @@ class Invoice(metaclass=PoolMeta):
         if (hasattr(self, 'payment_type') and self.payment_type
                 and self.payment_type.kind == 'both'):
             return self.payment_type.id
-
-        # reload invoice.untaxed_amount from invoice.lines (line.amount)
-        self._on_change_lines_taxes()
 
         kind = self.on_change_with_payment_type_kind()
         if (hasattr(self, 'payment_type') and self.payment_type
