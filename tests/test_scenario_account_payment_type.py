@@ -90,7 +90,7 @@ class Test(unittest.TestCase):
 
         # Check invoice payment type is correctly assigned
         Invoice = Model.get('account.invoice')
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         invoice.payment_type
@@ -158,7 +158,7 @@ class Test(unittest.TestCase):
         both.save()
 
         # We can use both in negative and positive invoices
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         line = invoice.lines.new()
@@ -169,7 +169,7 @@ class Test(unittest.TestCase):
         self.assertEqual(invoice.untaxed_amount, Decimal('50.00'))
         invoice.save()
         self.assertEqual(invoice.payment_type, both)
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         line = invoice.lines.new()
@@ -181,7 +181,7 @@ class Test(unittest.TestCase):
         self.assertEqual(invoice.payment_type, both)
 
         # Post an invoice with payment type
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         line = invoice.lines.new()
