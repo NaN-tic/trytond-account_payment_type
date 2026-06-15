@@ -91,4 +91,4 @@ class PaymentType(DeactivableMixin, ModelSQL, ModelView):
                     name=record.rec_name,
                     model=model.name,
                     type=payment_type.rec_name,
-                    field=field.field_description))
+                    field=field.string))
