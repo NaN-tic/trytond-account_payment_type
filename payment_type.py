@@ -23,8 +23,8 @@ class PaymentType(DeactivableMixin, ModelSQL, ModelView):
 
     name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('Code')
-    company = fields.Many2One('company.company', 'Company', required=True,
-        readonly=True, domain=[
+    company = fields.Many2One('company.company', 'Company',
+        readonly=True, states={'required': True}, domain=[
             ('id', If(Eval('context', {}).contains('company'), '=', '!='),
                 Eval('context', {}).get('company', 0)),
             ])
