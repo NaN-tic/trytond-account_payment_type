@@ -66,5 +66,9 @@ copyright notices and license terms. -->
                 pyson="1"/>
             <field name="rule_group" ref="rule_group_payment_type"/>
         </record>
+        <record model="ir.rule" id="rule_payment_type_no_company">
+            <field name="domain" eval="[('company', '=', None)]" pyson="1"/>
+            <field name="rule_group" ref="rule_group_payment_type"/>
+        </record>
     </data>
 </tryton>
