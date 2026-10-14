@@ -174,10 +174,6 @@ msgctxt "model:ir.ui.menu,name:menu_account_payment_type_form"
 msgid "Payment Types"
 msgstr "Tipus de pagaments"
 
-msgctxt "model:ir.ui.menu,name:menu_payment_types_configuration"
-msgid "Payment Types"
-msgstr "Tipus de pagaments"
-
 msgctxt "model:party.account.payment.type,name:"
 msgid "Party Account Payment Type"
 msgstr "Tipus d'ordre de pagament de tercer"

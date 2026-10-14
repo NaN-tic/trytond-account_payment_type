@@ -4,10 +4,6 @@ The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <tryton>
     <data>
-        <!-- Menu Top -->
-        <menuitem name="Payment Types" parent="account.menu_account_configuration"
-            id="menu_payment_types_configuration"/>
-
         <!-- account.payment.type -->
         <record model="ir.ui.view" id="account_payment_type_view_form">
             <field name="model">account.payment.type</field>
@@ -35,7 +31,7 @@ copyright notices and license terms. -->
             <field name="view" ref="account_payment_type_view_form"/>
             <field name="act_window" ref="act_window_account_payment_type"/>
         </record>
-        <menuitem parent="menu_payment_types_configuration" action="act_window_account_payment_type"
+        <menuitem parent="account_invoice.menu_payments_configuration" action="act_window_account_payment_type"
             id="menu_account_payment_type_form"/>
 
         <!-- Access -->
