@@ -1,0 +1,230 @@
+#
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:account.invoice,payment_type:"
+msgid "Payment Type"
+msgstr "付款方式"
+
+msgctxt "field:account.invoice,payment_type_kind:"
+msgid "Kind of payment type"
+msgstr "付款方式类别"
+
+msgctxt "field:account.move.line,account_kind:"
+msgid "Kind"
+msgstr "种类"
+
+msgctxt "field:account.move.line,payment_type:"
+msgid "Payment Type"
+msgstr "付款方式"
+
+msgctxt "field:account.payment.type,active:"
+msgid "Active"
+msgstr "启用"
+
+msgctxt "field:account.payment.type,code:"
+msgid "Code"
+msgstr "代码"
+
+msgctxt "field:account.payment.type,company:"
+msgid "Company"
+msgstr "公司"
+
+msgctxt "field:account.payment.type,create_date:"
+msgid "Create Date"
+msgstr "创建日期"
+
+msgctxt "field:account.payment.type,create_uid:"
+msgid "Create User"
+msgstr "创建用户"
+
+msgctxt "field:account.payment.type,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:account.payment.type,kind:"
+msgid "Kind"
+msgstr "种类"
+
+msgctxt "field:account.payment.type,name:"
+msgid "Name"
+msgstr "名称"
+
+msgctxt "field:account.payment.type,note:"
+msgid "Description"
+msgstr "描述"
+
+msgctxt "field:account.payment.type,rec_name:"
+msgid "Record Name"
+msgstr "记录名称"
+
+msgctxt "field:account.payment.type,write_date:"
+msgid "Write Date"
+msgstr "修改日期"
+
+msgctxt "field:account.payment.type,write_uid:"
+msgid "Write User"
+msgstr "修改用户"
+
+msgctxt "field:party.account.payment.type,company:"
+msgid "Company"
+msgstr "公司"
+
+msgctxt "field:party.account.payment.type,create_date:"
+msgid "Create Date"
+msgstr "创建日期"
+
+msgctxt "field:party.account.payment.type,create_uid:"
+msgid "Create User"
+msgstr "创建用户"
+
+msgctxt "field:party.account.payment.type,customer_payment_type:"
+msgid "Customer Payment type"
+msgstr "客户付款方式"
+
+msgctxt "field:party.account.payment.type,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:party.account.payment.type,party:"
+msgid "Party"
+msgstr "参与者"
+
+msgctxt "field:party.account.payment.type,rec_name:"
+msgid "Record Name"
+msgstr "记录名称"
+
+msgctxt "field:party.account.payment.type,supplier_payment_type:"
+msgid "Supplier Payment type"
+msgstr "供应商付款方式"
+
+msgctxt "field:party.account.payment.type,write_date:"
+msgid "Write Date"
+msgstr "修改日期"
+
+msgctxt "field:party.account.payment.type,write_uid:"
+msgid "Write User"
+msgstr "修改用户"
+
+msgctxt "field:party.party,customer_payment_type:"
+msgid "Customer Payment type"
+msgstr "客户付款方式"
+
+msgctxt "field:party.party,payment_types:"
+msgid "Payment Types"
+msgstr "付款方式"
+
+msgctxt "field:party.party,supplier_payment_type:"
+msgid "Supplier Payment type"
+msgstr "供应商付款方式"
+
+msgctxt "help:account.payment.type,kind:"
+msgid "The kind of payment type."
+msgstr "付款方式的类别。"
+
+msgctxt "help:account.payment.type,note:"
+msgid "Description of the payment type that will be shown in descriptions"
+msgstr "在描述中显示的付款方式说明。"
+
+msgctxt "help:party.account.payment.type,customer_payment_type:"
+msgid "Payment type of the customer."
+msgstr "客户的付款方式。"
+
+msgctxt "help:party.account.payment.type,supplier_payment_type:"
+msgid "Payment type of the supplier."
+msgstr "供应商的付款方式。"
+
+msgctxt "help:party.party,customer_payment_type:"
+msgid "Payment type of the customer."
+msgstr "客户的付款方式。"
+
+msgctxt "help:party.party,supplier_payment_type:"
+msgid "Payment type of the supplier."
+msgstr "供应商的付款方式。"
+
+msgctxt "model:account.payment.type,name:"
+msgid "Payment Type"
+msgstr "付款方式"
+
+msgctxt "model:ir.action,name:act_window_account_payment_type"
+msgid "Payment Types"
+msgstr "付款方式"
+
+#, python-format
+msgctxt "model:ir.message,text:invalid_account_payment_type"
+msgid ""
+"Can not set Payment Type in move line \"%(payment)s\" because account is not"
+" Payable nor Receivable."
+msgstr "无法设置分录“%(payment)s”的付款方式，因为该科目既不是应付科目，也不是应收科目。"
+
+#, python-format
+msgctxt "model:ir.message,text:modifiy_with_related_model"
+msgid ""
+"It is not possible to modify the field \"%(field)s\" as the payment type "
+"\"%(type)s\" is used on %(model)s \"%(name)s\""
+msgstr "无法修改字段“%(field)s”，因为付款方式“%(type)s”已用于%(model)s“%(name)s”。"
+
+msgctxt "model:ir.rule.group,name:rule_group_payment_type"
+msgid "Payment Type "
+msgstr "付款方式"
+
+msgctxt "model:ir.ui.menu,name:menu_account_payment_type_form"
+msgid "Payment Types"
+msgstr "付款方式"
+
+msgctxt "model:party.account.payment.type,name:"
+msgid "Party Account Payment Type"
+msgstr "往来单位付款方式"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Both"
+msgstr "两个都有"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Payable"
+msgstr "应付账款"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Receivable"
+msgstr "应收账款"
+
+msgctxt "selection:account.move.line,account_kind:"
+msgid "Payable"
+msgstr "应付账款"
+
+msgctxt "selection:account.move.line,account_kind:"
+msgid "Receivable"
+msgstr "应收账款"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Both"
+msgstr "两个都有"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Payable"
+msgstr "应付账款"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Receivable"
+msgstr "应收账款"
+
+msgctxt "view:account.payment.type:"
+msgid "Payments"
+msgstr "付款"
+
+msgctxt "view:party.party:"
+msgid "Payment types"
+msgstr "付款方式"
+
+msgctxt "model:account.payment.type,string:"
+msgid "Account Payment Type"
+msgstr "付款方式"
+
+msgctxt "model:party.account.payment.type,string:"
+msgid "Party Account Payment Type"
+msgstr "往来单位付款方式"
