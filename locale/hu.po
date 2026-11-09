@@ -1,0 +1,234 @@
+#
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "field:account.invoice,payment_type:"
+msgid "Payment Type"
+msgstr "Fizetési mód"
+
+msgctxt "field:account.invoice,payment_type_kind:"
+msgid "Kind of payment type"
+msgstr "Fizetési típus jellege"
+
+msgctxt "field:account.move.line,account_kind:"
+msgid "Kind"
+msgstr "Érvényesség"
+
+msgctxt "field:account.move.line,payment_type:"
+msgid "Payment Type"
+msgstr "Fizetési mód"
+
+msgctxt "field:account.payment.type,active:"
+msgid "Active"
+msgstr "Aktív"
+
+msgctxt "field:account.payment.type,code:"
+msgid "Code"
+msgstr "Kód"
+
+msgctxt "field:account.payment.type,company:"
+msgid "Company"
+msgstr "Cég"
+
+msgctxt "field:account.payment.type,create_date:"
+msgid "Create Date"
+msgstr "Létrehozás dátuma"
+
+msgctxt "field:account.payment.type,create_uid:"
+msgid "Create User"
+msgstr "Létrehozó felhasználó"
+
+msgctxt "field:account.payment.type,id:"
+msgid "ID"
+msgstr "Azonosító"
+
+msgctxt "field:account.payment.type,kind:"
+msgid "Kind"
+msgstr "Érvényesség"
+
+msgctxt "field:account.payment.type,name:"
+msgid "Name"
+msgstr "Név"
+
+msgctxt "field:account.payment.type,note:"
+msgid "Description"
+msgstr "Leírás"
+
+msgctxt "field:account.payment.type,rec_name:"
+msgid "Record Name"
+msgstr "Rekord neve"
+
+msgctxt "field:account.payment.type,write_date:"
+msgid "Write Date"
+msgstr "Módosítás dátuma"
+
+msgctxt "field:account.payment.type,write_uid:"
+msgid "Write User"
+msgstr "Módosító felhasználó"
+
+msgctxt "field:party.account.payment.type,company:"
+msgid "Company"
+msgstr "Cég"
+
+msgctxt "field:party.account.payment.type,create_date:"
+msgid "Create Date"
+msgstr "Létrehozás dátuma"
+
+msgctxt "field:party.account.payment.type,create_uid:"
+msgid "Create User"
+msgstr "Létrehozó felhasználó"
+
+msgctxt "field:party.account.payment.type,customer_payment_type:"
+msgid "Customer Payment type"
+msgstr "Vevő fizetési típusa"
+
+msgctxt "field:party.account.payment.type,id:"
+msgid "ID"
+msgstr "Azonosító"
+
+msgctxt "field:party.account.payment.type,party:"
+msgid "Party"
+msgstr "Ügyfél"
+
+msgctxt "field:party.account.payment.type,rec_name:"
+msgid "Record Name"
+msgstr "Rekord neve"
+
+msgctxt "field:party.account.payment.type,supplier_payment_type:"
+msgid "Supplier Payment type"
+msgstr "Szállító fizetési típusa"
+
+msgctxt "field:party.account.payment.type,write_date:"
+msgid "Write Date"
+msgstr "Módosítás dátuma"
+
+msgctxt "field:party.account.payment.type,write_uid:"
+msgid "Write User"
+msgstr "Módosító felhasználó"
+
+msgctxt "field:party.party,customer_payment_type:"
+msgid "Customer Payment type"
+msgstr "Vevő fizetési típusa"
+
+msgctxt "field:party.party,payment_types:"
+msgid "Payment Types"
+msgstr "Fizetési típusok"
+
+msgctxt "field:party.party,supplier_payment_type:"
+msgid "Supplier Payment type"
+msgstr "Szállító fizetési típusa"
+
+msgctxt "help:account.payment.type,kind:"
+msgid "The kind of payment type."
+msgstr "A fizetési típus jellege."
+
+msgctxt "help:account.payment.type,note:"
+msgid "Description of the payment type that will be shown in descriptions"
+msgstr "A fizetési típus leírása, amely a leírásokban megjelenik"
+
+msgctxt "help:party.account.payment.type,customer_payment_type:"
+msgid "Payment type of the customer."
+msgstr "A vevő fizetési típusa."
+
+msgctxt "help:party.account.payment.type,supplier_payment_type:"
+msgid "Payment type of the supplier."
+msgstr "A szállító fizetési típusa."
+
+msgctxt "help:party.party,customer_payment_type:"
+msgid "Payment type of the customer."
+msgstr "A vevő fizetési típusa."
+
+msgctxt "help:party.party,supplier_payment_type:"
+msgid "Payment type of the supplier."
+msgstr "A szállító fizetési típusa."
+
+msgctxt "model:account.payment.type,name:"
+msgid "Payment Type"
+msgstr "Fizetési mód"
+
+msgctxt "model:ir.action,name:act_window_account_payment_type"
+msgid "Payment Types"
+msgstr "Fizetési típusok"
+
+#, python-format
+msgctxt "model:ir.message,text:invalid_account_payment_type"
+msgid ""
+"Can not set Payment Type in move line \"%(payment)s\" because account is not"
+" Payable nor Receivable."
+msgstr ""
+"A(z) „%(payment)s” könyvelési sor fizetési módja nem állítható be, mert a "
+"számla nem kötelezettség vagy követelés típusú."
+
+#, python-format
+msgctxt "model:ir.message,text:modifiy_with_related_model"
+msgid ""
+"It is not possible to modify the field \"%(field)s\" as the payment type "
+"\"%(type)s\" is used on %(model)s \"%(name)s\""
+msgstr ""
+"A(z) „%(field)s” mező nem módosítható, mert a(z) „%(type)s” fizetési módot "
+"a(z) %(model)s „%(name)s” rekord használja."
+
+msgctxt "model:ir.rule.group,name:rule_group_payment_type"
+msgid "Payment Type "
+msgstr "Fizetési típus "
+
+msgctxt "model:ir.ui.menu,name:menu_account_payment_type_form"
+msgid "Payment Types"
+msgstr "Fizetési típusok"
+
+msgctxt "model:party.account.payment.type,name:"
+msgid "Party Account Payment Type"
+msgstr "Partner fizetési típusa"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Both"
+msgstr "mindre"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Payable"
+msgstr "Kötelezettségek"
+
+msgctxt "selection:account.invoice,payment_type_kind:"
+msgid "Receivable"
+msgstr "Követelések"
+
+msgctxt "selection:account.move.line,account_kind:"
+msgid "Payable"
+msgstr "Kötelezettségek"
+
+msgctxt "selection:account.move.line,account_kind:"
+msgid "Receivable"
+msgstr "Követelések"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Both"
+msgstr "mindre"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Payable"
+msgstr "Kötelezettségek"
+
+msgctxt "selection:account.payment.type,kind:"
+msgid "Receivable"
+msgstr "Követelések"
+
+msgctxt "view:account.payment.type:"
+msgid "Payments"
+msgstr "Fizetések"
+
+msgctxt "view:party.party:"
+msgid "Payment types"
+msgstr "Fizetési típusok"
+
+msgctxt "model:account.payment.type,string:"
+msgid "Account Payment Type"
+msgstr "Fizetési típus"
+
+msgctxt "model:party.account.payment.type,string:"
+msgid "Party Account Payment Type"
+msgstr "Partner fizetési típusa"
